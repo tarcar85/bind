@@ -18,8 +18,8 @@ sudo systemctl enable named
 sudo firewall-cmd --add-service=$service --zone=internal --permanent
 ####################
 sudo cp -rv * /
-sed -i "/^DNS1=/s/^DNS1=.*$/DNS1=$localhost/" /etc/sysconfig/network-scripts/ifcfg-$internal
-sed -i "/^DOMAIN=/s/^DOMAIN=.*$/DOMAIN=$domain/" /etc/sysconfig/network-scripts/ifcfg-$internal
+sudo sed -i "/^DNS1=/s/^DNS1=.*$/DNS1=$localhost/" /etc/sysconfig/network-scripts/ifcfg-$internal
+sudo sed -i "/^DOMAIN=/s/^DOMAIN=.*$/DOMAIN=$domain/" /etc/sysconfig/network-scripts/ifcfg-$internal
 ####################
 sudo init 6
 ####################
