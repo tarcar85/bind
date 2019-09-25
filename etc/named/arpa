@@ -2,14 +2,14 @@
 ; BIND reverse data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     ALEX.GOTDNS.ORG. root.ALEX.GOTDNS.ORG. (
+@       IN      SOA     ALEX.LOCAL.DO. root.ALEX.LOCAL.DO. (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-        IN      NS      ALEX.GOTDNS.ORG.
+        IN      NS      ALEX.LOCAL.DO.
 ; POPULATE WITH THE ACTUAL PRIVATE IP ADDRESSES
-76.132  IN      PTR     ALEX.GOTDNS.ORG.
-48.24   IN      PTR     SEBAS.GOTDNS.ORG.
+76.132  IN      PTR     ALEX.LOCAL.DO.
+48.24   IN      PTR     SEBAS.LOCAL.DO.
