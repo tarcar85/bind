@@ -8,7 +8,7 @@ service=dns
 sudo yum update -y
 sudo yum install -y firewalld
 sudo systemctl enable firewalld
-sudo systemctl start firewalld
+sudo systemctl restart firewalld
 sudo firewall-cmd --change-interface=$external --zone=external --permanent
 sudo firewall-cmd --change-interface=$internal --zone=internal --permanent
 sudo firewall-cmd --reload
@@ -18,7 +18,8 @@ sudo systemctl enable named
 sudo firewall-cmd --add-service=$service --zone=internal --permanent
 ####################
 sudo cp -rv * /
-echo -e "DNS1=$localhost\nDOMAIN=$domain" | sudo tee -a /etc/sysconfig/network-scripts/ifcfg-$internal
+sed -i "/^DNS1=/s/^DNS1=.*$/DNS1=$localhost/" /etc/sysconfig/network-scripts/ifcfg-$internal
+sed -i "/^DOMAIN=/s/^DOMAIN=.*$/DOMAIN=$domain/" /etc/sysconfig/network-scripts/ifcfg-$internal
 ####################
 sudo init 6
 ####################
