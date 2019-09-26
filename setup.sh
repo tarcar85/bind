@@ -22,8 +22,8 @@ for pattern in DNS1 DOMAIN
  do
   grep $pattern= $file -q || echo $pattern= 1>> $file
  done
-sudo sed -i "/^DNS1=/s/^DNS1=.*$/DNS1=$localhost/" $file
-sudo sed -i "/^DOMAIN=/s/^DOMAIN=.*$/DOMAIN=$domain/" $file
+sudo sed -i "/^DNS1=/s/^.*$/DNS1=$localhost/" $file
+sudo sed -i "/^DOMAIN=/s/^.*$/DOMAIN=$domain/" $file
 ####################
 sudo init 6
 ####################
