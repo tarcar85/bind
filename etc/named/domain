@@ -15,3 +15,4 @@ DNS1     IN      A       10.133.222.6
 THALES02 IN      A       10.133.221.218
 THALES1  IN      A       10.131.228.13
 THALES2  IN      A       10.131.227.169
+THALES03 IN     CNAME   DNS1
