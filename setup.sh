@@ -24,6 +24,7 @@ for pattern in DNS1 DOMAIN
  done
 sudo sed -i "/^DNS1=/s/^.*$/DNS1=$localhost/" $file
 sudo sed -i "/^DOMAIN=/s/^.*$/DOMAIN=$domain/" $file
+sudo sed -i "/^DNS2=/d" $file
 ####################
 sudo init 6
 ####################
