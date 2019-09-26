@@ -16,7 +16,6 @@ sudo firewall-cmd --reload
 ####################
 sudo yum install -y bind bind-utils
 sudo systemctl enable named
-sudo firewall-cmd --add-service=$service --zone=internal --permanent
 ####################
 sudo cp -rv * /
 for pattern in DNS1 DOMAIN
