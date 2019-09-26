@@ -1,4 +1,6 @@
 ####################
+set -x
+####################
 localhost=127.0.0.1
 domain=LOCAL.DO
 external=eth0
@@ -26,5 +28,7 @@ sudo sed -i "/^DNS1=/s/^.*$/DNS1=$localhost/" $file
 sudo sed -i "/^DOMAIN=/s/^.*$/DOMAIN=$domain/" $file
 sudo sed -i "/^DNS2=/d" $file
 ####################
-sudo init 6
+set -x
+####################
+#sudo init 6
 ####################
