@@ -22,13 +22,13 @@ sudo systemctl enable named
 sudo cp -rv * /
 for pattern in DNS1 DOMAIN
  do
-  grep $pattern= $file -q || echo $pattern= 1>> $file
+  grep $pattern= $file -q || echo $pattern= | sudo tee -a $file
  done
 sudo sed -i "/^DNS1=/s/^.*$/DNS1=$localhost/" $file
 sudo sed -i "/^DOMAIN=/s/^.*$/DOMAIN=$domain/" $file
 sudo sed -i "/^DNS2=/d" $file
 ####################
-set -x
+set +x
 ####################
-#sudo init 6
+sudo init 6
 ####################
